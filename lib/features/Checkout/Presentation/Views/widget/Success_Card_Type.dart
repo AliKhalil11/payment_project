@@ -9,16 +9,21 @@ class SuccessCardType extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.sizeOf(context).height*0.09,
-      
+      height: MediaQuery.sizeOf(context).height * 0.09,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(15) ,  ),
-        child: ListTile(
-          title: Text("Credit Card",style: Styles.style18bold,),
-          subtitle: Text("Mastercard **78",style: Styles.style18,),
-          leading: SvgPicture.asset("assets/images/logo.svg")
-        ),
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: ListTile(
+          title: Text(
+            "Credit Card",
+            style: Styles.style18bold,
+          ),
+          subtitle: Text(
+            "Mastercard **78",
+            style: Styles.style18,
+          ),
+          leading: SvgPicture.asset("assets/images/logo.svg")),
     );
   }
 }

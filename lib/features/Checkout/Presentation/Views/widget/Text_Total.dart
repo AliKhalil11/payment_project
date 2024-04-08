@@ -12,9 +12,15 @@ class TextTotal extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(text,style: Styles.style24,),
-       const Spacer(),
-        Text(text1,style: Styles.style24,)
+        Text(
+          text,
+          style: Styles.style24,
+        ),
+        const Spacer(),
+        Text(
+          text1,
+          style: Styles.style24,
+        )
       ],
     );
   }

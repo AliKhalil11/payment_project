@@ -12,16 +12,14 @@ class SuccessViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(32),
-      child: Stack(
-        clipBehavior: Clip.none, children: [
-      const  SuccessCard(),
+      child: Stack(clipBehavior: Clip.none, children: [
+        const SuccessCard(),
         Positioned(
-            bottom: MediaQuery.sizeOf(context).height * .2 + 20,
-            left: 20 + 8,
-            right: 20 + 8,
-            child: const CustomDashedLine(),
-          ),
-       
+          bottom: MediaQuery.sizeOf(context).height * .2 + 20,
+          left: 20 + 8,
+          right: 20 + 8,
+          child: const CustomDashedLine(),
+        ),
         Positioned(
             left: -20,
             bottom: MediaQuery.sizeOf(context).height * .2,
@@ -34,13 +32,8 @@ class SuccessViewBody extends StatelessWidget {
             child: const CircleAvatar(
               backgroundColor: Colors.white,
             )),
-        const Positioned(
-            left: 0,
-            right: 0,
-            top: -50,
-            child: CheckIcon()),
+        const Positioned(left: 0, right: 0, top: -50, child: CheckIcon()),
       ]),
     );
   }
 }
-

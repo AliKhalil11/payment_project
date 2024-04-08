@@ -3,14 +3,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
+
 class PaymentMethodsitem extends StatelessWidget {
-  const PaymentMethodsitem({super.key, required this.isActive, required this.image});
+  const PaymentMethodsitem(
+      {super.key, required this.isActive, required this.image});
   final bool isActive;
   final String image;
 
   @override
   Widget build(BuildContext context) {
-    return  AnimatedContainer(
+    return AnimatedContainer(
       duration: const Duration(milliseconds: 300),
       width: 103,
       height: 62,

@@ -11,3 +11,4 @@ GeneratedPluginRegistrant.java
 key.properties
 **/*.keystore
 **/*.jks
+lib/Core/Utils/Api_keys.dart

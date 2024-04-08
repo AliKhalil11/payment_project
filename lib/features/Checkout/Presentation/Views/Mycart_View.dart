@@ -1,10 +1,15 @@
 // ignore_for_file: file_names
 import 'package:flutter/material.dart';
 import 'package:payment_project/features/Checkout/Presentation/Views/widget/Text_Total.dart';
+import 'package:payment_project/features/Checkout/Presentation/manager/cubit/payment_cubit.dart';
+
+import 'package:payment_project/features/Checkout/data/repos/Check_repo_imp;.dart';
 import '../../../../Core/Utils/Custom_App_Bar.dart';
-import 'Payment_Details_View.dart';
+
 import 'widget/Custom_Button.dart';
 import 'widget/Order_Information.dart';
+import 'widget/Payment_Methods_Bottom_Sheet.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MyCartView extends StatelessWidget {
   const MyCartView({super.key});
@@ -55,14 +60,21 @@ class MyCartView extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              CustomButton(onTap: () { 
-               Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (context) {
-                    return const PaymentDeatailsView();
-                  }
-                  ),
-                  );
-             }, title: 'Complete Payment',),
+              CustomButton(
+                onTap: () {
+                  showModalBottomSheet(
+                      context: context,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16)),
+                      builder: (BuildContext context) {
+                        return BlocProvider(
+                          create: (context) => PaymentCubit(CheckoutRepoImpl()),
+                          child: const PaymentMethodsBottomSheet(),
+                        );
+                      });
+                },
+                title: 'Complete Payment',
+              ),
             ],
           ),
         ),

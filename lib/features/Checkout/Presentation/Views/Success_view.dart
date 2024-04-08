@@ -7,11 +7,10 @@ class SuccessView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: App_Bar(title: ''),
-      body: Transform.translate(
-        offset: Offset(0,-20),
-        child: SuccessViewBody()),
+      body:
+          Transform.translate(offset: Offset(0, -20), child: SuccessViewBody()),
     );
   }
 }
